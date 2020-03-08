@@ -1,7 +1,5 @@
 # kubernetes
-Ansible role for docker &amp; kubernetes
-
-Currently only for Debian
+Ansible role for docker &amp; kubernetes on a Debian host
 
 # available tags
 
