@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  vars:
+    apiserver_advertise_address: localhost
+    apiserver_cert_extra_sans: localhost
+  include_role:
+    - kubernetes

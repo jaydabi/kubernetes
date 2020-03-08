@@ -1,7 +1,7 @@
 ---
 
 - name: initialize the kubernetes cluster with kubeadm
-  command: kubeadm init --apiserver-advertise-address="78.47.221.243" --apiserver-cert-extra-sans="78.47.221.243" --node-name kubernetes-control-plane-1 --pod-network-cidr=192.168.0.0/16
+  command: kubeadm init --apiserver-advertise-address="{{ apiserver_advertise_address }}" --apiserver-cert-extra-sans="{{ apiserver_cert_extra_sans }}" --node-name kubernetes-control-plane-1 --pod-network-cidr=192.168.0.0/16
 
 - name: export
   command: export KUBECONFIG=/etc/kubernetes/admin.conf
