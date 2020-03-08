@@ -1,0 +1,25 @@
+---
+
+- name: install_docker_on_debian
+  import_tasks: install_docker_on_debian.yml
+  tags: install install_docker_on_debian
+  
+- name: install_kubernetes_on_debian
+  import_tasks: install_kubernetes_on_debian.yml
+  tags: install install_kubernetes_on_debian
+  
+- name: install_kubernetes_on_debian
+  import_tasks: install_kubernetes_on_debian.yml
+  tags: install install_kubernetes_on_debian
+  
+- name: init_kubernetes_master
+  import_tasks: init_kubernetes_master.yml
+  tags: init_kubernetes_master
+  
+- name: generate_kubernetes_join_command
+  import_tasks: generate_kubernetes_join_command.yml
+  tags: generate_kubernetes_join_command 
+  
+- name: join_kubernetes_cluster
+  import_tasks: join_kubernetes_cluster.yml
+  tags: join_kubernetes_cluster
