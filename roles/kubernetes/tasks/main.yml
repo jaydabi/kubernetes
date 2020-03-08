@@ -23,3 +23,7 @@
 - name: join_kubernetes_cluster
   import_tasks: join_kubernetes_cluster.yml
   tags: join_kubernetes_cluster
+  
+- name: init_single_node_cluster
+  import_tasks: init_single_node_cluster.yml
+  tags: init_single_node_cluster
