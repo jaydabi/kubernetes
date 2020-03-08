@@ -20,3 +20,7 @@ Currently only for Debian
 * `join_kubernetes_cluster`
 
   Will use join command created by generate_kubernetes_join_command to join an existing kubernetes cluster.
+
+* `init_single_node_cluster`
+
+  May be used after init_kubernetes_master to create a single node cluster. 
