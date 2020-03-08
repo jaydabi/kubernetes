@@ -1,12 +1,10 @@
 ---
-- hosts: all
-  tasks:
 
-  - name: initialize the kubernetes cluster with kubeadm
-    command: kubeadm init --apiserver-advertise-address="78.47.221.243" --apiserver-cert-extra-sans="78.47.221.243" --node-name kubernetes-control-plane-1 --pod-network-cidr=192.168.0.0/16
-    
-  - name: export
-    command: export KUBECONFIG=/etc/kubernetes/admin.conf
-    
-  - name: installing calico pod network add-on
-    command: kubectl apply -f https://docs.projectcalico.org/v3.11/manifests/calico.yaml
+- name: initialize the kubernetes cluster with kubeadm
+  command: kubeadm init --apiserver-advertise-address="78.47.221.243" --apiserver-cert-extra-sans="78.47.221.243" --node-name kubernetes-control-plane-1 --pod-network-cidr=192.168.0.0/16
+
+- name: export
+  command: export KUBECONFIG=/etc/kubernetes/admin.conf
+
+- name: installing calico pod network add-on
+  command: kubectl apply -f https://docs.projectcalico.org/v3.11/manifests/calico.yaml
