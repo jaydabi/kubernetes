@@ -29,6 +29,12 @@ Instead of using the playbook like shown below, you can also adapt the playbook.
 
 ## installing docker and kubernetes
 
+Either install a single node
+
+    ansible-playbook playbook.yml -i server1, --tag install
+
+or a bunch of nodes.
+
     ansible-playbook playbook.yml -i server1,server3,192.168.99.88 --tag install
     
 ## setting up a master node
