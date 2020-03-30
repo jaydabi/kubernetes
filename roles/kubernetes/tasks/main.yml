@@ -2,11 +2,15 @@
 
 - name: install_docker_on_debian
   import_tasks: install_docker_on_debian.yml
-  tags: install install_docker_on_debian
+  tags:
+  - install
+  - install_docker_on_debian
   
 - name: install_kubernetes_on_debian
   import_tasks: install_kubernetes_on_debian.yml
-  tags: install install_kubernetes_on_debian
+  tags:
+  - install
+  - install_kubernetes_on_debian
   
 - name: init_kubernetes_master
   import_tasks: init_kubernetes_master.yml
