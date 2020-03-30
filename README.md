@@ -33,4 +33,6 @@ Instead of using the playbook like shown below, you can also adapt the playbook.
     
 ## setting up a master node
 
-    ansible-playbook playbook.yml -i server1,server3,192.168.99.88 --tag install
+Instead of using the masters ip for kubernetes api queries, you should think about using a load balancer like suggested in the kubernetes documentation. This is especially relevent for multi-master clusters. Single node-clusters for development don't need this.
+
+    ansible-playbook playbook.yml -i server1 --tag init_kubernetes_master --extra-vars "apiserver_advertise_address=server1 apiserver_cert_extra_sans=server1"
