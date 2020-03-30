@@ -25,6 +25,12 @@ Ansible role for docker &amp; kubernetes on a Debian host
 
 # examples
 
-## install single node cluster for development purposes
+Instead of using the playbook like shown below, you can also adapt the playbook. Check [Ansible documentation](https://docs.ansible.com/ansible/latest/user_guide/playbooks.html).
 
-  todo
+## installing docker and kubernetes
+
+    ansible-playbook playbook.yml -i server1,server3,192.168.99.88 --tag install
+    
+## setting up a master node
+
+    ansible-playbook playbook.yml -i server1,server3,192.168.99.88 --tag install
