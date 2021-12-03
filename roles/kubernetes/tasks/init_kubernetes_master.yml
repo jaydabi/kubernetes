@@ -1,10 +1,21 @@
 ---
 
 - name: initialize the kubernetes cluster with kubeadm
-  command: kubeadm init --apiserver-advertise-address="{{ apiserver_advertise_address }}" --apiserver-cert-extra-sans="{{ apiserver_cert_extra_sans }}" --node-name kubernetes-control-plane-1 --pod-network-cidr=192.168.0.0/16
+  command: kubeadm init --control-plane-endpoint {{ control_plane_endpoint }} --node-name {{ node_name }} --pod-network-cidr=192.168.0.0/16
+  
+- name: ensure .kube directory exists for user root
+  file:
+    path: /root/.kube
+    state: directory
 
-- name: export
-  command: export KUBECONFIG=/etc/kubernetes/admin.conf
+- name: preparing .kube/config for root user
+  copy:
+    remote_src: yes
+    src: /etc/kubernetes/admin.conf
+    dest: /root/.kube/config
+    owner: root
+    group: root
+    mode: '0600'
 
 - name: installing calico pod network add-on
-  command: kubectl apply -f https://docs.projectcalico.org/v3.11/manifests/calico.yaml
+  command: kubectl apply -f https://docs.projectcalico.org/v3.21/manifests/calico.yaml
