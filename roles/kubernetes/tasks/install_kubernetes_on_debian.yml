@@ -38,6 +38,17 @@
     - kubelet
     - kubeadm
     - kubectl
+  when: kubernetes_version is undefined
+
+- name: install kubelet, kubeadm and kubectl
+  apt:
+    update_cache: yes
+    state: present
+    pkg:
+    - kubelet={{ kubernetes_version }}
+    - kubeadm={{ kubernetes_version }}
+    - kubectl={{ kubernetes_version }}
+  when: kubernetes_version is defined
 
 - name: mark packages for hold
   command: apt-mark hold kubelet kubeadm kubectl
