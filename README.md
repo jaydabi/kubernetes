@@ -22,6 +22,12 @@ Ansible role for docker &amp; kubernetes on a Debian host
 * `init_single_node_cluster`
 
   May be used after init_kubernetes_master to create a single node cluster. 
+  
+# available variables
+
+* `kubernetes_version`
+
+  Install specific version of kubernetes. Show available versions: `curl -s https://packages.cloud.google.com/apt/dists/kubernetes-xenial/main/binary-amd64/Packages | grep Version | awk '{print $2}'`
 
 # examples
 
