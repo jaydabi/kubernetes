@@ -1,7 +1,7 @@
 ---
 
 - name: initialize the kubernetes cluster with kubeadm
-  command: kubeadm init --control-plane-endpoint {{ control_plane_endpoint }} --node-name {{ node_name }} --pod-network-cidr=192.168.0.0/16
+  command: kubeadm init --control-plane-endpoint {{ control_plane_endpoint }} --node-name {{ ansible_hostname }} --pod-network-cidr=192.168.0.0/16
   
 - name: ensure .kube directory exists for user root
   file:
