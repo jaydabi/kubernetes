@@ -42,3 +42,5 @@ or a bunch of nodes.
 Instead of using the masters ip for kubernetes api queries, you should think about using a load balancer like suggested in the kubernetes documentation. This is especially relevent for multi-master clusters. Single node-clusters for development don't need this.
 
     ansible-playbook playbook.yml -i server1 --tag init_kubernetes_master --extra-vars "control_plane_endpoint=server1.tld node_name=whatever-node-name"
+
+The control plane could also be a DNS name.
