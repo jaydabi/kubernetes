@@ -1,4 +1,4 @@
 ---
 
-- name: generate join command
+- name: allow scheduling of workloads on the master
   command: kubectl taint nodes --all node-role.kubernetes.io/master-
